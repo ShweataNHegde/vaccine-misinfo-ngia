@@ -74,7 +74,7 @@ def make_mega_dict(query):
     video_list = get_videos(query)
     for video in video_list: 
         video['comments']= get_comments(video['videoID'])
-        for comment in video['comments'][:10]:
+        for comment in video['comments'][:100]:
             comment['replies'] = get_replies([comment['id']])
     return video_list
 
