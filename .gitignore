@@ -163,3 +163,6 @@ cython_debug/
 
 # youtube secret client key
 client_secret_839845628930-j0q6itj4r9st1o495hkukaehg6bc7s3e.apps.googleusercontent.com.json
+
+#api storage
+constants.py
