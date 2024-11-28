@@ -1,5 +1,5 @@
 ## Research Project for The New Geography for Information Age Course
-_Pravin Patel and Shweata Hegde_
+_Pravin Patil and Shweata Hegde_
 
 We are interested in looking at discourse around vaccines on YouTube. YouTube has become a go-to place to get any information. We would like to examine the nature of videos on vaccines, the emotional response to the video in the Comments section, and the dynamics of the conversations in Comment Threads.
 
