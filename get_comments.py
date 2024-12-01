@@ -3,7 +3,7 @@ import googleapiclient.discovery
 import json
 from pprint import pprint
 
-API_KEY = constants.api_key
+API_KEY = constants.PRAVIN_API_KEY
 youtube = googleapiclient.discovery.build('youtube', 'v3', developerKey=API_KEY)
 
 # Get list of YouTube Videos
@@ -38,11 +38,13 @@ def get_comments(video_id):
             comments.append({
                 'author': comment['authorDisplayName'],
                 'text': comment['textDisplay'],
-                'id': item['snippet']['topLevelComment']['id'] # Add this line to store the comment ID
+                'id': item['snippet']['topLevelComment']['id'],
+                'likeCount': item['snippet']['topLevelComment']['snippet']['likeCount'] # Add this line to store the comment ID
             })
 
         request = youtube.commentThreads().list_next(request, response)
-    print("fetched comments")
+    comments.sort(key=lambda x: x['likeCount'], reverse=True)
+    pprint("fetched comments")
     return comments
 
 # Get replies to a comment
@@ -79,8 +81,8 @@ def make_mega_dict(query):
   return video_list
 
 def main():
-    video_list = make_mega_dict("vaccines")
-    with open("vaccine_01.json", "w") as outfile:
+    video_list = make_mega_dict("rare side effects of covishield")
+    with open("rare_side_effects_covishield.json", "w") as outfile:
         json.dump(video_list, outfile, indent=4, sort_keys=False)
 
 if __name__ == "__main__":
