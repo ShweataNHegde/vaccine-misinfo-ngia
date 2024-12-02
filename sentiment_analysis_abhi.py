@@ -3,7 +3,7 @@ import openai
 import json
 import pandas as pd
 # Set your OpenAI API key
-openai.api_key = "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"  # Replace with your actual API key
+openai.api_key = ""  # Replace with your actual API key
 client = OpenAI(api_key=openai.api_key) 
 
 def analyze_sentiment(text):
