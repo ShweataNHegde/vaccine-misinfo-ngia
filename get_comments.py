@@ -27,6 +27,7 @@ def get_comments(video_id):
     request = youtube.commentThreads().list(
         part='snippet',
         videoId=video_id,
+        textFormat='plainText',
         maxResults=100  # Adjust as needed
     )
 
@@ -53,6 +54,7 @@ def get_replies(comment_id):
     request = youtube.comments().list(
         part='snippet',
         parentId=comment_id,
+        textFormat='plainText',
         maxResults=100  # Adjust as needed
     )
 
