@@ -3,7 +3,7 @@ import json
 import openai
 
 # Set up OpenAI API key
-openai.api_key = ""
+#openai.api_key = ""
 
 # Load the input JSON file with explicit UTF-8 encoding
 with open("demo.json", "r", encoding="utf-8") as file:

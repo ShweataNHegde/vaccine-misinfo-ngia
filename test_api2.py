@@ -2,7 +2,7 @@ import json
 import openai
 
 # Set up OpenAI API key
-openai.api_key = ""  
+#openai.api_key = ""  
 # Preprocess text to handle special characters and long inputs
 def preprocess_text(text):
     """
