@@ -78,13 +78,13 @@ def make_mega_dict(query):
   video_list = get_videos(query)
   for video in video_list: 
     video['comments']= get_comments(video['videoID'])
-    for comment in video['comments'][:100]:
+    for comment in video['comments'][:15]:
       comment['replies'] = get_replies(comment['id'])  # Pass comment ID directly
   return video_list
 
 def main():
-    video_list = make_mega_dict("rare side effects of covishield")
-    with open("rare_side_effects_covishield.json", "w") as outfile:
+    video_list = make_mega_dict("covaxin")
+    with open("covaxin_comment.json", "w") as outfile:
         json.dump(video_list, outfile, indent=4, sort_keys=False)
 
 if __name__ == "__main__":

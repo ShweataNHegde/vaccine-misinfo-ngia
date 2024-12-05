@@ -1,0 +1,22 @@
+Category,Count
+Unclear,3226
+Sadness,232
+Fear,123
+Surprise,15
+Anger,663
+Disgust,118
+Happiness,456
+"Happiness, Fear",1
+Frustration,3
+"Sadness, Fear",2
+"Sadness, Anger",1
+Suspicion,3
+Reassurance,2
+Concern,3
+"Fear, Anger",1
+"Happiness, Anger, and Sadness",1
+"Fear, Sadness",1
+Regret,1
+Pride,2
+Skepticism,1
+"Anger, Sadness",1

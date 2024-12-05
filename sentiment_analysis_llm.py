@@ -1,5 +1,5 @@
-from pydantic import BaseModel
 from openai import OpenAI
+from pydantic import BaseModel
 import json
 from pprint import pprint
 import constants
@@ -47,9 +47,10 @@ def load_json_file(file_path):
         data = json.load(f)
         return data
 
-data = load_json_file('comments/rare_side_effects_covaxin.json')
+data = load_json_file('covaxin_comment.json')
 for video in data:
-    for comment in video['comments'][:3]:
+    for comment in video['comments'][:10]:
+    #for comment in video['comments']:
         video["sentiment"] = dict(analyse_sentiment(comment['text']))
         print("analysing comment")
         
@@ -57,5 +58,7 @@ for video in data:
             reply["sentiment"] = dict(analyse_sentiment(reply['text']))
             print("analysing reply")
 
-with open('vaccine_01_sentiment.json'.format(1), 'w', encoding='utf-8') as file:
+with open('Covaxin_comment_sentiment.json'.format(1), 'w', encoding='utf-8') as file:
     json.dump(data, file, ensure_ascii=False)
+
+
